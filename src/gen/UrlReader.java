@@ -37,8 +37,6 @@ public class UrlReader {
     BufferedReader rd;
     InputStream is;
 
-
-
     public UrlReader (URL url){
         this.url = url;
     }

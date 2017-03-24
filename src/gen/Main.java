@@ -25,7 +25,7 @@ public class Main {
 
         try {
             start = new URL(star);
-            w = new PrintWriter(new BufferedWriter(new FileWriter("net1.txt", true)));
+            w = new PrintWriter(new BufferedWriter(new FileWriter("net3.txt", true)));
         } catch (MalformedURLException e) {
             e.printStackTrace();
         } catch (IOException e) {

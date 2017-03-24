@@ -35,28 +35,50 @@ public class Search {
             returnedResult = ur.readAll();
             Matcher matcher = urlPattern.matcher(returnedResult);
             while (matcher.find()) {
-
                 String newurl =  (returnedResult.substring(matcher.start(1),matcher.end()));
-                totalInt ++;
-
                 if (!newurl.contains("http")){newurl = "http://"+newurl;}
                 int end =newurl.indexOf("/", 8);
-                newurl = (end>0)? newurl.substring(0,end):newurl;
-                System.out.println (newurl) ;
+                int end1 =newurl.indexOf("?", 8);
+                int end2 =newurl.indexOf("'", 8);
+
+                if (end>0 && end1>0 && end2>0){
+                    newurl = newurl.substring(0,Math.min(Math.min(end, end1),end2));
+                } else if (end>0 &&end1 >0){
+                    newurl = newurl.substring(0,Math.min (end,end1));
+                } else if (end>0 && end2 >0){
+                    newurl = newurl.substring(0,Math.min (end,end2));
+                } else if (end1 > 0 &&end2 >0){
+                    newurl = newurl.substring(0,Math.min (end1,end2));
+                } else if (end>0){
+                    newurl = newurl.substring(0,end);
+                } else if (end1>0){
+                    newurl = newurl.substring(0,end1);
+                } else if (end2>0){
+                    newurl = newurl.substring(0,end2);
+                }
+
                 URL newer = new URL(newurl);
-                if (urlset.add(newer)) {urlss.add(newer);}
+
+                //adding to database
+
+
+                if (urlset.add(newer)) {
+                    urlss.add(newer);
+                }
             }
-
-
-
         } catch (IOException e) {
-            System.out.println("read Failed " + url);
+            //System.out.println("read Failed " + url);
         }
         if (!urlss.isEmpty()){
             for (URL lit : urlss){
-                System.out.println(totalInt + ": "+ lit);
+                totalInt ++;
+                if (totalInt%100==0){
+                    System.out.println(totalInt);
+                }
+                //System.out.println (totalInt + ": "+ lit) ;
                 w.println(lit);
             }
+            w.flush();
             if (totalInt<1000000){
                 expanding();
             }
@@ -65,7 +87,7 @@ public class Search {
 
     private void expanding(){
         for (URL lit : urlss){
-            System.out.println("new inst: " + lit);
+            //System.out.println("new inst: " + lit);
             new Search(lit, w);
         }
     }
