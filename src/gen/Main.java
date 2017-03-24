@@ -7,13 +7,14 @@ import java.io.PrintWriter;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashSet;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class Main {
     static long totalInt = 0;
-    static HashSet<URL> urlset;
-    String star = "https://ca.yahoo.com";
+    static Set<URL> urlset;
     URL start;
-
+    String star = "http://www.google.com";
     PrintWriter w;
 
     public static void main(String[] args) {
@@ -22,7 +23,7 @@ public class Main {
 
     Main (){
         final long startTime = System.currentTimeMillis();
-        urlset = new HashSet<>();
+        urlset = new TreeSet<URL>();
 
         try {
             start = new URL(star);

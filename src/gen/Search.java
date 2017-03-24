@@ -7,6 +7,7 @@ import java.io.PrintWriter;
 import java.net.URL;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.TreeSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import static gen.Main.totalInt;
@@ -27,7 +28,7 @@ public class Search {
 
     public Search(URL url, PrintWriter w){
         this.w = w;
-        urlss = new HashSet<URL>();
+        urlss = new TreeSet<URL>();
         this.url = url;
 
         if (url == null){return;}
@@ -42,16 +43,16 @@ public class Search {
                 totalInt ++;
                 if (!newurl.contains("http")){newurl = "http://"+newurl;}
 
+                //this searches for the new urls that can be found
+                String s =newurl;
                 if (newurl.contains("https://") ) {
-                    String s = "https://" + newurl.substring(8).split("/")[0];
+                    s = "https://" + newurl.substring(8).split("/")[0];
                 } else if (newurl.contains("https://")){
-                    String s = "http://" + newurl.substring(7).split("/")[0];
+                    s = "http://" + newurl.substring(7).split("/")[0];
                 }
 
-                URL newer = new URL(newurl);
+                URL newer = new URL(s);
                 if (urlset.add(newer)) {urlss.add(newer);}
-                //System.out.println(totalInt+ ": " +newurl);
-                //w.println(newurl);
             }
 
 
@@ -76,4 +77,7 @@ public class Search {
             new Search(lit, w);
         }
     }
+
+
+    //next How to Implement a database storage
 }
