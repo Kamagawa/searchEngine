@@ -36,15 +36,26 @@ public class Search {
             returnedResult = ur.readAll();
             Matcher matcher = urlPattern.matcher(returnedResult);
             while (matcher.find()) {
-                totalInt ++;
+
                 String newurl =  (returnedResult.substring(matcher.start(1),matcher.end()));
+                if (newurl.contains("php?")){continue;}
+                totalInt ++;
                 if (!newurl.contains("http")){newurl = "http://"+newurl;}
+
+                if (newurl.contains("https://") ) {
+                    String s = "https://" + newurl.substring(8).split("/")[0];
+                } else if (newurl.contains("https://")){
+                    String s = "http://" + newurl.substring(7).split("/")[0];
+                }
+
                 URL newer = new URL(newurl);
                 if (urlset.add(newer)) {urlss.add(newer);}
                 //System.out.println(totalInt+ ": " +newurl);
                 //w.println(newurl);
             }
-            w.flush();
+
+
+
         } catch (IOException e) {
             System.out.println("read Failed " + url);
         }
@@ -61,8 +72,6 @@ public class Search {
 
     private void expanding(){
         for (URL lit : urlss){
-            System.out.println(totalInt + ": "+ lit);
-            w.println(lit);
             System.out.println("new inst: " + lit);
             new Search(lit, w);
         }
