@@ -1,24 +1,23 @@
 package gen;
-
+/**
+ * Created by eugene on 3/23/2017.
+ */
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import static gen.Main.totalInt;
+import static gen.Main.urlset;
 
-
-/**
- * Created by eugene on 3/23/2017.
- */
 public class Search {
     URL url;
     String returnedResult;
     Set<URL> urlss;
     PrintWriter w;
+
 
     private static final Pattern urlPattern = Pattern.compile(
             "(?:^|[\\W])((ht|f)tp(s?):\\/\\/|www\\.)"
@@ -27,6 +26,7 @@ public class Search {
             Pattern.CASE_INSENSITIVE | Pattern.MULTILINE | Pattern.DOTALL);
 
     public Search(URL url, PrintWriter w){
+        this.w = w;
         urlss = new HashSet<URL>();
         this.url = url;
 
@@ -39,25 +39,32 @@ public class Search {
                 totalInt ++;
                 String newurl =  (returnedResult.substring(matcher.start(1),matcher.end()));
                 if (!newurl.contains("http")){newurl = "http://"+newurl;}
-                urlss.add(new URL(newurl));
-                System.out.println(totalInt+ ": " +newurl);
+                URL newer = new URL(newurl);
+                if (urlset.add(newer)) {urlss.add(newer);}
+                //System.out.println(totalInt+ ": " +newurl);
+                //w.println(newurl);
             }
+            w.flush();
         } catch (IOException e) {
             System.out.println("read Failed " + url);
-            e.printStackTrace();
         }
-        if ((!urlss.isEmpty())&&totalInt<1000000){
-            expanding();
+        if (!urlss.isEmpty()){
+            for (URL lit : urlss){
+                System.out.println(totalInt + ": "+ lit);
+                w.println(lit);
+            }
+            if (totalInt<1000000){
+                expanding();
+            }
         }
     }
 
     private void expanding(){
         for (URL lit : urlss){
+            System.out.println(totalInt + ": "+ lit);
+            w.println(lit);
+            System.out.println("new inst: " + lit);
             new Search(lit, w);
         }
     }
-
-
-
-
 }
