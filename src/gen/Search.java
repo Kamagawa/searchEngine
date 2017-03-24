@@ -4,8 +4,6 @@ package gen;
  */
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.net.URL;
-import java.util.HashSet;
 import java.util.Set;
 import java.util.TreeSet;
 import java.util.regex.Matcher;
@@ -39,19 +37,13 @@ public class Search {
             while (matcher.find()) {
 
                 String newurl =  (returnedResult.substring(matcher.start(1),matcher.end()));
-                if (newurl.contains("php?")){continue;}
                 totalInt ++;
+
                 if (!newurl.contains("http")){newurl = "http://"+newurl;}
-
-                //this searches for the new urls that can be found
-                String s =newurl;
-                if (newurl.contains("https://") ) {
-                    s = "https://" + newurl.substring(8).split("/")[0];
-                } else if (newurl.contains("https://")){
-                    s = "http://" + newurl.substring(7).split("/")[0];
-                }
-
-                URL newer = new URL(s);
+                int end =newurl.indexOf("/", 8);
+                newurl = (end>0)? newurl.substring(0,end):newurl;
+                System.out.println (newurl) ;
+                URL newer = new URL(newurl);
                 if (urlset.add(newer)) {urlss.add(newer);}
             }
 
