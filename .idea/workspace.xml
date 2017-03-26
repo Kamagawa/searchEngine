@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e572a011-69af-4f20-826a-e98cbc5e1d88" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/gen/MysqlCon.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SearchEngine/gen/Main.class" afterPath="$PROJECT_DIR$/out/production/SearchEngine/gen/Main.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gen/Main.java" afterPath="$PROJECT_DIR$/src/gen/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gen/Search.java" afterPath="$PROJECT_DIR$/src/gen/Search.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,7 +28,7 @@
         <entry file="file://$PROJECT_DIR$/src/gen/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="155">
-              <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -40,10 +36,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Search.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Search.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/gen/Search.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
+            <state relative-caret-position="1139">
               <caret line="67" column="12" lean-forward="false" selection-start-line="67" selection-start-column="12" selection-end-line="67" selection-end-column="12" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -52,11 +48,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MysqlCon.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MysqlCon.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/gen/MysqlCon.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="3" lean-forward="true" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
+            <state relative-caret-position="125">
+              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding>
                 <marker date="1490566247806" expanded="true" signature="551:568" ph="select * fro... emp" />
                 <marker date="1490566247806" expanded="true" signature="552:568" ph="SELECT VERSI... " />
@@ -272,7 +268,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/mysql-connector.jar!/" />
     <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -716,7 +712,7 @@
       <workItem from="1490318017698" duration="1419000" />
       <workItem from="1490323370969" duration="33028000" />
       <workItem from="1490459055715" duration="914000" />
-      <workItem from="1490564216085" duration="2017000" />
+      <workItem from="1490564216085" duration="2175000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1490319174022</created>
@@ -781,11 +777,18 @@
       <option name="project" value="LOCAL" />
       <updated>1490382419071</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Implemmented connection to SQL">
+      <created>1490566447433</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1490566447433</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37378000" />
+    <option name="totallyTimeSpent" value="37536000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -838,7 +841,8 @@
     <MESSAGE value="added miscellenious config" />
     <MESSAGE value="shortened URL filter" />
     <MESSAGE value="YoloIsdone" />
-    <option name="LAST_COMMIT_MESSAGE" value="YoloIsdone" />
+    <MESSAGE value="Implemmented connection to SQL" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemmented connection to SQL" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1062,16 +1066,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gen/Search.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="67" column="12" lean-forward="false" selection-start-line="67" selection-start-column="12" selection-end-line="67" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/gen/UrlReader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -1083,7 +1077,7 @@
     <entry file="file://$PROJECT_DIR$/src/gen/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="155">
-          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1092,11 +1086,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/gen/MysqlCon.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="3" lean-forward="true" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
+        <state relative-caret-position="125">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding>
             <marker date="1490566247806" expanded="true" signature="551:568" ph="select * fro... emp" />
             <marker date="1490566247806" expanded="true" signature="552:568" ph="SELECT VERSI... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gen/Search.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1139">
+          <caret line="67" column="12" lean-forward="false" selection-start-line="67" selection-start-column="12" selection-end-line="67" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
