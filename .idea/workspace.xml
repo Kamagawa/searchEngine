@@ -712,7 +712,7 @@
       <workItem from="1490318017698" duration="1419000" />
       <workItem from="1490323370969" duration="33028000" />
       <workItem from="1490459055715" duration="914000" />
-      <workItem from="1490564216085" duration="2175000" />
+      <workItem from="1490564216085" duration="2189000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1490319174022</created>
@@ -784,11 +784,18 @@
       <option name="project" value="LOCAL" />
       <updated>1490566447433</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="worked with imported Jar">
+      <created>1490566598471</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1490566598471</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37536000" />
+    <option name="totallyTimeSpent" value="37550000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -842,7 +849,8 @@
     <MESSAGE value="shortened URL filter" />
     <MESSAGE value="YoloIsdone" />
     <MESSAGE value="Implemmented connection to SQL" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemmented connection to SQL" />
+    <MESSAGE value="worked with imported Jar" />
+    <option name="LAST_COMMIT_MESSAGE" value="worked with imported Jar" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
