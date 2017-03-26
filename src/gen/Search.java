@@ -32,6 +32,7 @@ public class Search {
         if (url == null){return;}
         UrlReader ur = new UrlReader(url);
         try {
+
             returnedResult = ur.readAll();
             Matcher matcher = urlPattern.matcher(returnedResult);
             while (matcher.find()) {

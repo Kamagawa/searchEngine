@@ -12,10 +12,12 @@ public class Main {
     static long totalInt = 0;
     static Set<URL> urlset;
     URL start;
-    String star = "https://www.hao123.com/";
+    String star = "http://www.youtube.com";
     PrintWriter w;
+    static String urllink = "jdbc:mysql://localhost/phpmyadmin/";
 
     public static void main(String[] args) {
+        new MysqlCon(urllink);
         new Main();
     }
 
@@ -23,9 +25,10 @@ public class Main {
         final long startTime = System.currentTimeMillis();
         urlset = new TreeSet<URL>();
 
+
         try {
             start = new URL(star);
-            w = new PrintWriter(new BufferedWriter(new FileWriter("net3.txt", true)));
+            w = new PrintWriter(new BufferedWriter(new FileWriter("lolXDlovely.txt", true)));
         } catch (MalformedURLException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -36,5 +39,5 @@ public class Main {
         final long endTime = System.currentTimeMillis();
         System.out.println("Finished in: " + (endTime - startTime)/1000 );
     }
-
 }
+
