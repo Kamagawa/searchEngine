@@ -1,20 +1,35 @@
+/*
+* The MIT License
+* Copyright (c) 2013 Eugene Wang (euhome.github.io) 3/23/2017
+* Permission is hereby granted, free of charge, to any person obtaining a copy
+* of this software and associated documentation files (the "Software"), to deal
+* in the Software without restriction, including without limitation the rights
+* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+* copies of the Software, and to permit persons to whom the Software is
+* furnished to do so, subject to the following conditions:
+* The above copyright notice and this permission notice shall be included in
+* all copies or substantial portions of the Software.
+* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+* OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+* THE SOFTWARE.
+* */
 package gen;
 
-/**
- * Created by eugene on 3/26/2017.
- * Holy fuck
- */
 import java.sql.*;
 import java.util.Set;
 
 class MysqlCon{
-    Class mother;
-    String urlLink;
-    boolean created = false;
-    Connection con;
-    Statement stmt;
+    private Class mother;
+    private String urlLink;
+    private boolean created = false;
+    private Connection con;
+    private Statement stmt;
 
-    public MysqlCon (String urlLink){
+    MysqlCon (String urlLink){
         this.urlLink = urlLink;
 
         try{
@@ -34,7 +49,7 @@ class MysqlCon{
         }catch(Exception e){ e.printStackTrace();}
     }
 
-    public String get(String content){
+    String get(String content){
         try {
             ResultSet rs = stmt.executeQuery("SELECT * FROM `urlstore` WHERE `url` LIKE '" + content + "' ");
             if (rs.next()){
@@ -46,7 +61,7 @@ class MysqlCon{
         return "failed";
     }
 
-    public boolean checkToPut (String obj) {
+    boolean checkToPut (String obj) {
         if (get(obj).equalsIgnoreCase("failed")) {
             put(obj);       //assuming it is always put successful
             return true;
@@ -55,11 +70,11 @@ class MysqlCon{
         }
     }
 
-    public Set<URL> getAll(){
+    Set<URL> getAll(){
         return null;
     }
 
-    public int put (String content){
+    int put (String content){
         try {
             int rsNum = stmt.executeUpdate("INSERT INTO `urlstore` (`url`) VALUES ('" + content +"');");
             return rsNum;
