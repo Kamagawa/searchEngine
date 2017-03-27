@@ -1,6 +1,8 @@
 package gen;
+
 /**
  * Created by eugene on 3/23/2017.
+ * Yolo is cool
  */
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -10,12 +12,12 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import static gen.Main.totalInt;
 
-public class Search {
-    URL url;
-    String returnedResult;
-    Set<URL> urlss;
-    PrintWriter w;
-    MysqlCon con;
+class Search {
+    private URL url;
+    private String returnedResult;
+    private Set<URL> urlss;
+    private PrintWriter w;
+    private MysqlCon con;
 
     private static final Pattern urlPattern = Pattern.compile(
             "(?:^|[\\W])((ht|f)tp(s?):\\/\\/|www\\.)"
@@ -23,9 +25,9 @@ public class Search {
                     + "[\\p{Alnum}.,%_=?&#\\-+()\\[\\]\\*$~@!:/{};']*)",
             Pattern.CASE_INSENSITIVE | Pattern.MULTILINE | Pattern.DOTALL);
 
-    public Search(URL url, PrintWriter w, MysqlCon con){
+    Search(URL url, PrintWriter w, MysqlCon con){
         this.w = w;
-        urlss = new TreeSet<URL>();
+        urlss = new TreeSet<>();
         this.url = url;
         this.con = con;
 
@@ -66,6 +68,7 @@ public class Search {
                 }
             }
         } catch (IOException e) {
+            return;
             //System.out.println("read Failed " + url);
         }
         if (!urlss.isEmpty()){

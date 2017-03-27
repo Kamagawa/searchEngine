@@ -32,16 +32,17 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.Charset;
 
-public class UrlReader {
-    URL url;
-    BufferedReader rd;
-    InputStream is;
+class UrlReader {
+    private URL url;
+    private BufferedReader rd;
+    private InputStream is;
 
-    public UrlReader (URL url){
+    UrlReader (URL url){
         this.url = url;
     }
 
     String readAll() throws IOException {
+        if (url == null) {return "";}
         is = url.e().openStream();
         rd = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
 
@@ -52,7 +53,25 @@ public class UrlReader {
         }
         return sb.toString();
     }
+/*
+Problem:
 
+
+
+Exception in thread "main" java.lang.IllegalArgumentException: URI can't be null.
+	at sun.net.spi.DefaultProxySelector.select(DefaultProxySelector.java:147)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1099)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:999)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:933)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1513)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1441)
+	at java.net.URL.openStream(URL.java:1045)
+	at gen.UrlReader.readAll(UrlReader.java:45)
+	at gen.Search.<init>(Search.java:36)
+	at gen.Search.expanding(Search.java:90)
+	at gen.Search.<init>(Search.java:82)
+
+ */
 
 
 
