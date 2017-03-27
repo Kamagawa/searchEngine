@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e572a011-69af-4f20-826a-e98cbc5e1d88" name="Default" comment="Solved the null pointer">
+    <list default="true" id="e572a011-69af-4f20-826a-e98cbc5e1d88" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gen/Main.java" afterPath="$PROJECT_DIR$/src/gen/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gen/MysqlCon.java" afterPath="$PROJECT_DIR$/src/gen/MysqlCon.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gen/Search.java" afterPath="$PROJECT_DIR$/src/gen/Search.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gen/URL.java" afterPath="$PROJECT_DIR$/src/gen/URL.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gen/UrlReader.java" afterPath="$PROJECT_DIR$/src/gen/UrlReader.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,12 +27,11 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/gen/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="28" column="4" lean-forward="false" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
+            <state relative-caret-position="176">
+              <caret line="35" column="44" lean-forward="true" selection-start-line="35" selection-start-column="44" selection-end-line="35" selection-end-column="44" />
               <folding>
                 <element signature="e#0#2215#0" expanded="true" />
                 <element signature="imports" expanded="true" />
-                <element signature="e#1598#1599#0" expanded="true" />
                 <element signature="e#1624#1625#0" expanded="true" />
               </folding>
             </state>
@@ -742,7 +736,7 @@
       <workItem from="1490323370969" duration="33028000" />
       <workItem from="1490459055715" duration="914000" />
       <workItem from="1490564216085" duration="3370000" />
-      <workItem from="1490586327340" duration="15380000" />
+      <workItem from="1490586327340" duration="15448000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1490319174022</created>
@@ -842,11 +836,18 @@
       <option name="project" value="LOCAL" />
       <updated>1490602850327</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Added config file">
+      <created>1490606322492</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1490606322492</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54111000" />
+    <option name="totallyTimeSpent" value="54179000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -903,7 +904,8 @@
     <MESSAGE value="worked with imported Jar" />
     <MESSAGE value="Successful connection with mySQL DB, running fine." />
     <MESSAGE value="Solved the null pointer" />
-    <option name="LAST_COMMIT_MESSAGE" value="Solved the null pointer" />
+    <MESSAGE value="Added config file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added config file" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -923,7 +925,6 @@
           <folding>
             <element signature="e#0#2215#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#1598#1599#0" expanded="true" />
             <element signature="e#1624#1625#0" expanded="true" />
           </folding>
         </state>
@@ -986,7 +987,6 @@
           <folding>
             <element signature="e#0#2215#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#1598#1599#0" expanded="true" />
             <element signature="e#1624#1625#0" expanded="true" />
           </folding>
         </state>
@@ -1030,7 +1030,6 @@
           <folding>
             <element signature="e#0#2215#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#1598#1599#0" expanded="true" />
             <element signature="e#1624#1625#0" expanded="true" />
           </folding>
         </state>
@@ -1074,7 +1073,6 @@
           <folding>
             <element signature="e#0#2215#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#1598#1599#0" expanded="true" />
             <element signature="e#1624#1625#0" expanded="true" />
           </folding>
         </state>
@@ -1259,12 +1257,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/gen/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="28" column="4" lean-forward="false" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
+        <state relative-caret-position="176">
+          <caret line="35" column="44" lean-forward="true" selection-start-line="35" selection-start-column="44" selection-end-line="35" selection-end-column="44" />
           <folding>
             <element signature="e#0#2215#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#1598#1599#0" expanded="true" />
             <element signature="e#1624#1625#0" expanded="true" />
           </folding>
         </state>
