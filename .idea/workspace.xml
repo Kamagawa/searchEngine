@@ -736,7 +736,7 @@
       <workItem from="1490323370969" duration="33028000" />
       <workItem from="1490459055715" duration="914000" />
       <workItem from="1490564216085" duration="3370000" />
-      <workItem from="1490586327340" duration="15448000" />
+      <workItem from="1490586327340" duration="15488000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1490319174022</created>
@@ -843,11 +843,18 @@
       <option name="project" value="LOCAL" />
       <updated>1490606322492</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="dasddsadas">
+      <created>1490606366984</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1490606366985</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54179000" />
+    <option name="totallyTimeSpent" value="54219000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -905,7 +912,8 @@
     <MESSAGE value="Successful connection with mySQL DB, running fine." />
     <MESSAGE value="Solved the null pointer" />
     <MESSAGE value="Added config file" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added config file" />
+    <MESSAGE value="dasddsadas" />
+    <option name="LAST_COMMIT_MESSAGE" value="dasddsadas" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
