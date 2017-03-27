@@ -9,14 +9,13 @@ import java.util.TreeSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import static gen.Main.totalInt;
-import static gen.Main.urlset;
 
 public class Search {
     URL url;
     String returnedResult;
     Set<URL> urlss;
     PrintWriter w;
-
+    MysqlCon con;
 
     private static final Pattern urlPattern = Pattern.compile(
             "(?:^|[\\W])((ht|f)tp(s?):\\/\\/|www\\.)"
@@ -24,10 +23,11 @@ public class Search {
                     + "[\\p{Alnum}.,%_=?&#\\-+()\\[\\]\\*$~@!:/{};']*)",
             Pattern.CASE_INSENSITIVE | Pattern.MULTILINE | Pattern.DOTALL);
 
-    public Search(URL url, PrintWriter w){
+    public Search(URL url, PrintWriter w, MysqlCon con){
         this.w = w;
         urlss = new TreeSet<URL>();
         this.url = url;
+        this.con = con;
 
         if (url == null){return;}
         UrlReader ur = new UrlReader(url);
@@ -61,9 +61,7 @@ public class Search {
                 URL newer = new URL(newurl);
 
                 //adding to database
-
-
-                if (urlset.add(newer)) {
+                if (con.checkToPut(newurl)) {
                     urlss.add(newer);
                 }
             }
@@ -89,7 +87,7 @@ public class Search {
     private void expanding(){
         for (URL lit : urlss){
             //System.out.println("new inst: " + lit);
-            new Search(lit, w);
+            new Search(lit, w, con);
         }
     }
 

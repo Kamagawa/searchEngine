@@ -10,31 +10,30 @@ import java.util.TreeSet;
 
 public class Main {
     static long totalInt = 0;
-    static Set<URL> urlset;
     URL start;
-    String star = "http://www.youtube.com";
+    String star = "https://www.google.ca";
     PrintWriter w;
-    static String urllink = "jdbc:mysql://localhost/phpmyadmin/";
+    MysqlCon con;
+    String urllink = "jdbc:mysql://localhost:3306/url_store";
 
     public static void main(String[] args) {
-        new MysqlCon(urllink);
         new Main();
     }
 
     Main (){
         final long startTime = System.currentTimeMillis();
-        urlset = new TreeSet<URL>();
+        con = new MysqlCon(urllink);
 
 
         try {
             start = new URL(star);
-            w = new PrintWriter(new BufferedWriter(new FileWriter("lolXDlovely.txt", true)));
+            w = new PrintWriter(new BufferedWriter(new FileWriter("setSQL.txt", true)));
         } catch (MalformedURLException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        new Search(start ,w);
+        new Search(start ,w, con);
 
         final long endTime = System.currentTimeMillis();
         System.out.println("Finished in: " + (endTime - startTime)/1000 );
